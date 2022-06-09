@@ -90,3 +90,9 @@ body.wrong {
 .hide {
     display: none;
 }
+
+img {
+    width: 300px;
+    height: 200px;
+    align-items: center;
+}
