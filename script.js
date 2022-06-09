@@ -7,7 +7,8 @@ const answerButtonsElement = document.getElementById("answer-buttons")
 
 let shuffledQuestions, currentQuestionIndex
 
-var colombia = "https://cdn.britannica.com/68/7668-004-08492AB7/Flag-Colombia.jpg";
+var colombia = document.createElement("img");
+Image.src ="https://cdn.britannica.com/68/7668-004-08492AB7/Flag-Colombia.jpg";
 
 startButton.addEventListener('click', startQuiz)
 nextButton.addEventListener('click', () => {
