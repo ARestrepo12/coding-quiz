@@ -96,5 +96,50 @@ const questions = [
             {text: 'Ecuador', correct: false},
             {text: 'Spain', correct: false},
         ]
-    }
+    },
+    {
+        question: Portugal ,
+        answers: [
+            {text: 'Serbia', correct: false},
+            {text: 'Morocco', correct: false},
+            {text: 'Mali', correct: false},
+            {text: 'Portugal', correct: true},
+        ]
+    },
+    {
+        question: Slovenia ,
+        answers: [
+            {text: 'Slovenia', correct: true},
+            {text: 'Serbia', correct: false},
+            {text: 'Croatia', correct: false},
+            {text: 'Slovakia', correct: false},
+        ]
+    },
+    {
+        question: Australia ,
+        answers: [
+            {text: 'New Zealand', correct: false},
+            {text: 'Australia', correct: true},
+            {text: 'Scotland', correct: false},
+            {text: 'Seychelles', correct: false},
+        ]
+    },
+    {
+        question: Norway ,
+        answers: [
+            {text: 'Denmark', correct: false},
+            {text: 'Finland', correct: false},
+            {text: 'Norway', correct: true},
+            {text: 'Sweden', correct: false},
+        ]
+    },
+    {
+        question: Guatemala ,
+        answers: [
+            {text: 'Guatemala', correct: true},
+            {text: 'Honduras', correct: false},
+            {text: 'Nicaragua', correct: false},
+            {text: 'Haiti', correct: false},
+        ]
+    },
 ]
