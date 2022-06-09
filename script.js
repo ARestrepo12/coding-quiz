@@ -10,6 +10,10 @@ let shuffledQuestions, currentQuestionIndex
 var colombia = "https://cdn.britannica.com/68/7668-004-08492AB7/Flag-Colombia.jpg";
 
 startButton.addEventListener('click', startQuiz)
+nextButton.addEventListener('click', () => {
+    currentQuestionIndex++
+    setNextQuestion()
+})
 
 
 
@@ -59,6 +63,12 @@ function selectAnswer(e) {
     Array.from(answerButtonsElement.children).forEach(button => {
         setStatusClass(button, button.dataset.correct)
     })
+    if (shuffledQuestions.length > currentQuestionIndex + 1) {
+    nextButton.classList.remove('hide')
+    } else {
+        startButton.innerText = 'Restart'
+        startButton.classList.remove('hide')
+    }
 
     function setStatusClass(element, correct) {
         clearStatusClass(element)
@@ -83,6 +93,8 @@ const questions = [
         answers: [
             {text: 'Colombia', correct: true},
             {text: 'Bolivia', correct: false},
+            {text: 'Ecuador', correct: false},
+            {text: 'Spain', correct: false},
         ]
     }
 ]
