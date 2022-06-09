@@ -98,7 +98,7 @@ const questions = [
         ]
     },
     {
-        question: Portugal ,
+        question: colombia ,
         answers: [
             {text: 'Serbia', correct: false},
             {text: 'Morocco', correct: false},
@@ -107,7 +107,7 @@ const questions = [
         ]
     },
     {
-        question: Slovenia ,
+        question: colombia ,
         answers: [
             {text: 'Slovenia', correct: true},
             {text: 'Serbia', correct: false},
@@ -116,7 +116,7 @@ const questions = [
         ]
     },
     {
-        question: Australia ,
+        question: colombia ,
         answers: [
             {text: 'New Zealand', correct: false},
             {text: 'Australia', correct: true},
@@ -125,7 +125,7 @@ const questions = [
         ]
     },
     {
-        question: Norway ,
+        question: colombia ,
         answers: [
             {text: 'Denmark', correct: false},
             {text: 'Finland', correct: false},
@@ -134,12 +134,12 @@ const questions = [
         ]
     },
     {
-        question: Guatemala ,
+        question: colombia ,
         answers: [
             {text: 'Guatemala', correct: true},
             {text: 'Honduras', correct: false},
             {text: 'Nicaragua', correct: false},
             {text: 'Haiti', correct: false},
         ]
-    },
+    }
 ]
