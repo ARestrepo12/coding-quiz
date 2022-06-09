@@ -4,6 +4,7 @@
     font-weight: 500;
 }
 
+
 :root {
     --hue-neutral: 200;
     --hue-wrong: 0;
@@ -19,7 +20,9 @@ body {
     height: 100vh;
     justify-content: center;
     align-items: center;
-    background-color: hsl(var(--hue), 100%, 20%);
+    background-image: url("./assets/images/Flags-Around-the-World.png");
+    background-size: cover;
+    
 }
 
 body.correct {
@@ -79,6 +82,9 @@ body.wrong {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    
+    
 }
 
 .hide {
