@@ -1,5 +1,6 @@
 const startButton = document.getElementById('start-btn')
 const nextButton = document.getElementById('next-btn')
+const opening = document.getElementById('opening')
 const questionContainerElement = document.getElementById
 ('question-container')
 const questionElement = document.getElementById("question")
@@ -7,53 +8,29 @@ const answerButtonsElement = document.getElementById("answer-buttons")
 
 let shuffledQuestions, currentQuestionIndex
 
-var colombia = document.createElement("img");
-colombia.src ="https://cdn.britannica.com/68/7668-004-08492AB7/Flag-Colombia.jpg";
-
-var portugal = document.createElement("img");
-portugal.src ="https://media.istockphoto.com/photos/highly-detailed-flag-of-portugal-portugal-flag-high-detail-national-picture-id1309831191?b=1&k=20&m=1309831191&s=170667a&w=0&h=Go40zkob5UgWZZPtqr4tAhHZ7RHWyQB-dUqrD1TlLQg=";
-
-var slovenia = document.createElement("img");
-slovenia.src ="https://media.istockphoto.com/vectors/slovenia-flag-icon-in-flat-style-national-sign-vector-illustration-vector-id1141056883?k=20&m=1141056883&s=612x612&w=0&h=tr5EEJZPAyMsrp567xxkfn95CyvrpsFwxrMiEVGIeOo=";
-
-var australia = document.createElement("img");
-australia.src ="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Flag_of_Australia_%28converted%29.svg/1200px-Flag_of_Australia_%28converted%29.svg.png";
-
-var norway = document.createElement("img");
-norway.src ="https://cdn.britannica.com/01/3101-004-506325BB/Flag-Norway.jpg";
-
-var guatemala = document.createElement("img");
-guatemala.src ="https://upload.wikimedia.org/wikipedia/commons/e/ec/Flag_of_Guatemala.svg";
-
 startButton.addEventListener('click', startQuiz)
 nextButton.addEventListener('click', () => {
     currentQuestionIndex++
     setNextQuestion()
 })
 
-
-
 function startQuiz() {
     console.log('Started')
     startButton.classList.add('hide')
+    opening.classList.add('hide')
     shuffledQuestions = questions.sort(() => Math.random() - .5)
     currentQuestionIndex = 0
     questionContainerElement.classList.remove('hide')
     setNextQuestion()
-
 }
 
 function setNextQuestion() {
     resetState()
     showQuestion(shuffledQuestions[currentQuestionIndex])
-
 }
 
 function showQuestion(question) {
-    questionElement.append(image)
-    if (shuffledQuestions[currentQuestionIndex] = 0) {
-        image.src = "https://cdn.britannica.com/68/7668-004-08492AB7/Flag-Colombia.jpg"
-        }
+    questionElement.innerText = question.question
     question.answers.forEach(answer => {
         const button = document.createElement("button")
         button.innerText = answer.text
@@ -64,7 +41,6 @@ function showQuestion(question) {
         button.addEventListener('click', selectAnswer)
         answerButtonsElement.appendChild(button)
     })
-
 }
 
 function resetState() {
@@ -108,57 +84,57 @@ function selectAnswer(e) {
 
 const questions = [
     {
-        question: colombia ,
+        question: "Who was the Premier League Player of the 2021/2022 Season?" ,
         answers: [
-            {text: 'Colombia', correct: true},
-            {text: 'Bolivia', correct: false},
-            {text: 'Ecuador', correct: false},
-            {text: 'Spain', correct: false},
+            {text: 'Kevin DeBruyne', correct: true},
+            {text: 'Mo Salah', correct: false},
+            {text: 'Cristiano Ronaldo', correct: false},
+            {text: 'Lionel Messi', correct: false},
         ]
     },
     {
-        question: portugal ,
+        question: "Who were the 2021/2022 Premier League Champions?" ,
         answers: [
-            {text: 'Serbia', correct: false},
-            {text: 'Morocco', correct: false},
-            {text: 'Mali', correct: false},
-            {text: 'Portugal', correct: true},
+            {text: 'Tottenham', correct: false},
+            {text: 'Manchester United', correct: false},
+            {text: 'Liverpool', correct: false},
+            {text: 'Manchester City', correct: true},
         ]
     },
     {
-        question: slovenia ,
+        question: "Which team won zero trophies in the 2021/2022 season?" ,
         answers: [
-            {text: 'Slovenia', correct: true},
-            {text: 'Serbia', correct: false},
-            {text: 'Croatia', correct: false},
-            {text: 'Slovakia', correct: false},
+            {text: 'Manchester United', correct: true},
+            {text: 'Manchester City', correct: false},
+            {text: 'Liverpool', correct: false},
+            {text: 'Real Madrid', correct: false},
         ]
     },
     {
-        question: australia ,
+        question: "Which player won the Premier League Young Player of the Season in 2021/2022" ,
         answers: [
-            {text: 'New Zealand', correct: false},
-            {text: 'Australia', correct: true},
-            {text: 'Scotland', correct: false},
-            {text: 'Seychelles', correct: false},
+            {text: 'Bukayo Saka', correct: false},
+            {text: 'Phil Foden', correct: true},
+            {text: 'Trent Alexander-Arnold', correct: false},
+            {text: 'Mason Greenwood', correct: false},
         ]
     },
     {
-        question: norway ,
+        question: "How many goals did Man City score in a span of 5 minutes to win their last game of the season?" ,
         answers: [
-            {text: 'Denmark', correct: false},
-            {text: 'Finland', correct: false},
-            {text: 'Norway', correct: true},
-            {text: 'Sweden', correct: false},
+            {text: '1', correct: false},
+            {text: '2', correct: false},
+            {text: '3', correct: true},
+            {text: '7', correct: false},
         ]
     },
     {
-        question: guatemala ,
+        question: "How many goals did Man City score in the 2021/2022 season without a striker?" ,
         answers: [
-            {text: 'Guatemala', correct: true},
-            {text: 'Honduras', correct: false},
-            {text: 'Nicaragua', correct: false},
-            {text: 'Haiti', correct: false},
+            {text: '99', correct: true},
+            {text: '76', correct: false},
+            {text: '52', correct: false},
+            {text: '66', correct: false},
         ]
     }
 ]
