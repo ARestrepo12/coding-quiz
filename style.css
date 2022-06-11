@@ -20,8 +20,9 @@ body {
     height: 100vh;
     justify-content: center;
     align-items: center;
-    background-image: url("./assets/images/Flags-Around-the-World.png");
+    background-image: url("./assets/images/trophy-lift.webp");
     background-size: cover;
+    font-size: 20px;
     
 }
 
@@ -62,6 +63,7 @@ body.wrong {
 
 .btn:hover {
     border-color: black;
+    box-shadow: 3px 3px rgb(21, 73, 104);
 }
 
 .btn.correct {
