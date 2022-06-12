@@ -1,12 +1,15 @@
 const startButton = document.getElementById('start-btn')
 const nextButton = document.getElementById('next-btn')
 const opening = document.getElementById('opening')
+const highscore = document.getElementById('high-score')
 const questionContainerElement = document.getElementById
 ('question-container')
 const questionElement = document.getElementById("question")
 const answerButtonsElement = document.getElementById("answer-buttons")
 
 let shuffledQuestions, currentQuestionIndex
+
+highscore.classList.add('hide')
 
 startButton.addEventListener('click', startQuiz)
 nextButton.addEventListener('click', () => {
@@ -18,6 +21,7 @@ function startQuiz() {
     console.log('Started')
     startButton.classList.add('hide')
     opening.classList.add('hide')
+    highscore.classList.add('hide')
     shuffledQuestions = questions.sort(() => Math.random() - .5)
     currentQuestionIndex = 0
     questionContainerElement.classList.remove('hide')
@@ -61,6 +65,7 @@ function selectAnswer(e) {
     if (shuffledQuestions.length > currentQuestionIndex + 1) {
     nextButton.classList.remove('hide')
     } else {
+        highscore.classList.remove('hide')
         startButton.innerText = 'Restart'
         startButton.classList.remove('hide')
     }
@@ -138,3 +143,24 @@ const questions = [
         ]
     }
 ]
+
+const startingMinutes = 5;
+let time = startingMinutes * 60;
+
+const countdownEl = document.getElementById('countdown');
+
+
+
+function updateCountdown() {
+    const minutes = Math.floor(time / 60);
+    let seconds = time % 60;
+
+    seconds = seconds < 10 ? '0' + seconds : seconds;
+
+    countdownEl.innerHTML = `${minutes}: ${seconds}`;
+    time--;
+}
+
+startButton.addEventListener('click', () => {
+    setInterval(updateCountdown, 1000);
+})
